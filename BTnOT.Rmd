@@ -1,0 +1,63 @@
+---
+title: "To BTO or not to BTO"
+author: "Wesley Chioh"
+date: "12/27/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(tidymodels)
+library(mapboxapi)
+library(plotly)
+library(kableExtra)
+library(httr)
+library(jsonlite)
+library(tidyjson)
+
+## It is not worth the trouble
+# # URA API Access
+# 
+# ## Setting up URA API Access Token
+# ura_token <- read_csv("URA_Token.txt", col_names = F) %>%
+#   unlist(use.names = F)
+# ura_daily_access <- GET(url = "https://www.ura.gov.sg/uraDataService/insertNewToken.action", 
+#                         add_headers(AccessKey = ura_token)) %>%
+#   content() %>%
+#   unlist(.,use.names = F) %>%
+#   .[3]
+# 
+# ## Getting data from URA
+# ura_private_property_transaction_records_1 <- GET(url = "https://www.ura.gov.sg/uraDataService/invokeUraDS?service=PMI_Resi_Transaction&batch=1",
+# add_headers(AccessKey = ura_token, Token = ura_daily_access)) %>%
+#   content()
+# ura_batch1 <- ura_private_property_transaction_records_1[2]
+# ura_batch1 <- data.frame(t(sapply(ura_private_property_transaction_records_1,c)))
+
+
+```
+
+## Primer
+
+The Singapore real estate market has been red-hot this past year, Covid-19 induced economic tremors notwithstanding. Invariably, Singaporeans buy property as a store of wealth, an investment that is both income-generating and capital gain generating. More troubling is the fact that some Singaporeans see HDB subsidised apartments as such a vehicle as well.  
+  
+The questions at hand, are therefore:  
+1. What has the trend been, where property prices are concerned in Singapore? Is there a difference between private and public housing options, after controlling for sizes and district?  
+2. What are some of the factors affecting property prices in Singapore? Is it proximity to amenities?  
+3. Can we predict housing prices using HDB and URA data sets?  
+4. Are there any hidden gems?  
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
